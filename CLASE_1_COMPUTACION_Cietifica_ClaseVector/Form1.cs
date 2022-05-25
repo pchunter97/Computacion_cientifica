@@ -434,6 +434,24 @@ namespace CLASE_1_COMPUTACION_Cietifica_ClaseVector
             } while (t <= 5);
             pictureBox2.Image = lienzo;
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Segmento S = new Segmento();
+            S.x0 = -10;
+            S.xf = 10;
+            S.y0 = 0;
+            S.yf = 0;
+            S.color0 = Color.White;
+            S.Encender(lienzo);
+            S.x0 = 0;
+            S.y0 = -5.98;
+            S.xf = 0;
+            S.yf = 5.98;
+            S.color0 = Color.White;
+            S.Encender(lienzo);
+            pictureBox2.Image = lienzo;
+        }
     }
     
 }
