@@ -384,7 +384,7 @@ namespace CLASE_1_COMPUTACION_Cietifica_ClaseVector
             {
                 for (int j = 0; j < 420; j++)
                 {
-                    lienzo.SetPixel(i, j, Color.FromArgb(255*(i-700)/-350, 255*(i - 700) / -350,((255*((i-700)/-350))+(255*((i-350)/350)))));
+                    lienzo.SetPixel(i, j, Color.FromArgb((255*(i-700))/-350, (255*(i - 700)) / -350,((255*(i-700))/-350)+((255*(i-350))/350)));
                     pictureBox2.Image = lienzo;
                 }
             }
