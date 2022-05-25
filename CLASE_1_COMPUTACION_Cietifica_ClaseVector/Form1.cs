@@ -353,14 +353,14 @@ namespace CLASE_1_COMPUTACION_Cietifica_ClaseVector
         //Interpolacion de azul
         private void button9_Click(object sender, EventArgs e)
         {
-            for (int i =0;i<700;i++)
+            /*for (int i =0;i<700;i++)
             {
                 for (int j = 0;j<420;j++)
                 {
                    // if (i <=350)
                     //{
-                        lienzo.SetPixel(i, j, Color.FromArgb(255,0,(int)(255*i)/700,(-255*(i-700))/700));
-                        pictureBox2.Image = lienzo;
+                        lienzo.SetPixel(i, j, Color.FromArgb(255, (255 * (i - 700) / -700), ((255 * (i - 700)) / -700), 255*i/700));
+                    pictureBox2.Image = lienzo;
                     //}
                     //else
                     //{
@@ -369,7 +369,70 @@ namespace CLASE_1_COMPUTACION_Cietifica_ClaseVector
                     //}
                     
                 }
+            }*/
+
+            for (int i = 0; i < 350; i++)
+            {
+                for (int j = 0; j < 420; j++)
+                {                   
+                    lienzo.SetPixel(i, j, Color.FromArgb(((255*(i-350))/-350)+((255*i)/350), ((255 * (i - 350)) / -350) + ((255 * i) / 350),(255*i)/350));
+                    pictureBox2.Image = lienzo;
+                }
             }
+
+            for (int i = 350; i < 700; i++)
+            {
+                for (int j = 0; j < 420; j++)
+                {
+                    lienzo.SetPixel(i, j, Color.FromArgb(255*(i-700)/-350, 255*(i - 700) / -350,((255*((i-700)/-350))+(255*((i-350)/350)))));
+                    pictureBox2.Image = lienzo;
+                }
+            }
+
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Vector3D vect3d = new Vector3D();
+            vect3d.color0 = Color.Red;
+            double t = -5;
+            do
+            {
+                double h = -4;
+                do
+                {
+                    vect3d.x0 = t;
+                    vect3d.y0 = h;
+                    vect3d.z0 = .19 * ((t * t) + (h * h)-25);
+                    
+                    vect3d.Encender(lienzo);
+                    h = h + 0.1;
+                } while (h <= 4);
+                t = t + 0.1;
+            } while (t <= 5);
+            pictureBox2.Image = lienzo;
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            Vector3D vect3d = new Vector3D();
+            vect3d.color0 = Color.Red;
+            double t = -5;
+            do
+            {
+                double h = -4;
+                do
+                {
+                    vect3d.x0 = t;
+                    vect3d.y0 = h;
+                    vect3d.z0 = .19 * ((t * t) - (h * h) - 7);
+
+                    vect3d.Encender(lienzo);
+                    h = h + 0.1;
+                } while (h <= 4);
+                t = t + 0.1;
+            } while (t <= 5);
+            pictureBox2.Image = lienzo;
         }
     }
     
