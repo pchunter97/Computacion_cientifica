@@ -406,9 +406,9 @@ namespace CLASE_1_COMPUTACION_Cietifica_ClaseVector
                     vect3d.z0 = .19 * ((t * t) + (h * h)-25);
                     
                     vect3d.Encender(lienzo);
-                    h = h + 0.1;
+                    h = h + 0.05;
                 } while (h <= 4);
-                t = t + 0.1;
+                t = t + 0.05;
             } while (t <= 5);
             pictureBox2.Image = lienzo;
         }
@@ -428,14 +428,14 @@ namespace CLASE_1_COMPUTACION_Cietifica_ClaseVector
                     vect3d.z0 = .19 * ((t * t) - (h * h) - 7);
 
                     vect3d.Encender(lienzo);
-                    h = h + 0.1;
+                    h = h + 0.05;
                 } while (h <= 4);
-                t = t + 0.1;
+                t = t + 0.05;
             } while (t <= 5);
             pictureBox2.Image = lienzo;
         }
 
-        private void button10_Click(object sender, EventArgs e)
+        /*private void button10_Click(object sender, EventArgs e)
         {
             Segmento S = new Segmento();
             S.x0 = -10;
@@ -450,6 +450,28 @@ namespace CLASE_1_COMPUTACION_Cietifica_ClaseVector
             S.yf = 5.98;
             S.color0 = Color.White;
             S.Encender(lienzo);
+            pictureBox2.Image = lienzo;
+        }*/
+
+        private void button10_Click_1(object sender, EventArgs e)
+        {
+            Vector3D vect3d = new Vector3D();
+            vect3d.color0 = Color.Red;
+            double t = -5;
+            do
+            {
+                double h = -4;
+                do
+                {
+                    vect3d.x0 = t;
+                    vect3d.y0 = h;
+                    vect3d.z0 = .19 * ((t * t) + (h * h) - 25);
+
+                    vect3d.Encender(lienzo);
+                    h = h + 0.1;
+                } while (h <= 4);
+                t = t + 0.1;
+            } while (t <= 5);
             pictureBox2.Image = lienzo;
         }
     }
