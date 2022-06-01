@@ -51,8 +51,14 @@ namespace CLASE_1_COMPUTACION_Cietifica_ClaseVector
         public virtual void apagar(Bitmap lienzo)
         {
 
-            this.color0 = Color.Yellow;
-            Encender(lienzo);
+            Procesos.pantalla(x0, y0, out int sx, out int sy);
+
+            if (sx >= 0 && sx < 700 && sy >= 0 && sy < 420)
+            {
+                color0 = Color.White;
+                Encender(lienzo);
+
+            }
 
         }
     }

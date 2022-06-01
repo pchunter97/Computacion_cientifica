@@ -5,7 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace CLASE_1_COMPUTACION_Cietifica_ClaseVector
@@ -477,42 +477,38 @@ namespace CLASE_1_COMPUTACION_Cietifica_ClaseVector
 
         private void button12_Click(object sender, EventArgs e)
         {
-           /* Clasevector v = new Clasevector();
-            double t = -3;
+             Clasevector v = new Clasevector();
+             double t = -3;
 
-            do
-            {
-                v.x0 = t;
-                v.y0 = (-(t * t) + (5 * t) + 24) / 6.2;
-                v.color0 = Color.Black;
-                v.Encender(lienzo);
+             do
+             {
+                 v.x0 = t;
+                 v.y0 = (-(t * t) + (5 * t) + 24) / 6.2;
+                 v.color0 = Color.Black;
+                 v.Encender(lienzo);
 
-                t = t + 0.001;
+                 t = t + 0.001;
 
-            } while (t <= 8);
-            pictureBox2.Image = lienzo;*/
+             } while (t <= 8);
+             pictureBox2.Image = lienzo;
 
-
-            double t = -3;
             Circunferencia c = new Circunferencia();
-
+            double t2 = -3;
+            c.Radio = 0.25;
             do
             {
-                c.x0 = t;
-                c.y0 = (-(t * t) + (5 * t) + 24) / 6.2;
-                c.Radio = 0.3;
-                c.color0 = Color.Black;
-
-
+                c.x0 = t2;
+                c.y0 = (-(t2 * t2) + (5 * t2) + 24) / 6.2;
+                c.color0 = Color.Green;
                 c.Encender(lienzo);
+                pictureBox2.Image = lienzo;
+                pictureBox2.Refresh();
+                Thread.Sleep(40);
+                c.apagar(lienzo);
+                pictureBox2.Image = lienzo;
+                t2 = t2 + 0.2;
 
-                //Thread.Sleep(3000);
-
-                //c.Apagar(pixel);
-                t = t + 1;
-
-            } while (t <= 8);
-            pictureBox2.Image = lienzo;
+            } while (t2 <= 8);
         }
     }
     
