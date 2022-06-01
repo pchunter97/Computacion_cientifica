@@ -474,6 +474,46 @@ namespace CLASE_1_COMPUTACION_Cietifica_ClaseVector
             } while (t <= 5);
             pictureBox2.Image = lienzo;
         }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+           /* Clasevector v = new Clasevector();
+            double t = -3;
+
+            do
+            {
+                v.x0 = t;
+                v.y0 = (-(t * t) + (5 * t) + 24) / 6.2;
+                v.color0 = Color.Black;
+                v.Encender(lienzo);
+
+                t = t + 0.001;
+
+            } while (t <= 8);
+            pictureBox2.Image = lienzo;*/
+
+
+            double t = -3;
+            Circunferencia c = new Circunferencia();
+
+            do
+            {
+                c.x0 = t;
+                c.y0 = (-(t * t) + (5 * t) + 24) / 6.2;
+                c.Radio = 0.3;
+                c.color0 = Color.Black;
+
+
+                c.Encender(lienzo);
+
+                //Thread.Sleep(3000);
+
+                //c.Apagar(pixel);
+                t = t + 1;
+
+            } while (t <= 8);
+            pictureBox2.Image = lienzo;
+        }
     }
     
 }
