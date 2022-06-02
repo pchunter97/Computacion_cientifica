@@ -150,7 +150,7 @@ namespace CLASE_1_COMPUTACION_Cietifica_ClaseVector
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            //Segmentos
+            /*//Segmentos
             Segmento segmento = new Segmento();
             segmento.x0 = -3;
             segmento.y0 = -5;
@@ -165,20 +165,20 @@ namespace CLASE_1_COMPUTACION_Cietifica_ClaseVector
             segmento2.xf = 3;
             segmento2.yf = 0.5;
             segmento2.color0 = Color.Red;
-            segmento2.Encender(lienzo);
+            segmento2.Encender(lienzo);*/
 
             
 
 
             // Circunferencias
             Circunferencia circunferencia = new Circunferencia();
-            circunferencia.x0 = -5;
-            circunferencia.y0 = 1.2;
-            circunferencia.Radio = 2;
+            circunferencia.x0 = 0;
+            circunferencia.y0 = 0;
+            circunferencia.Radio = 3;
             circunferencia.color0= Color.Blue;
             circunferencia.Encender(lienzo);
 
-            Circunferencia circunferencia2 = new Circunferencia();
+            /*Circunferencia circunferencia2 = new Circunferencia();
             circunferencia2.x0 = 3;
             circunferencia2.y0 = 0.5;
             circunferencia2.Radio = 1.2;
@@ -199,7 +199,7 @@ namespace CLASE_1_COMPUTACION_Cietifica_ClaseVector
             raiz.y0 = 4;
             raiz.Radio = 0.5;
             raiz.color0 = Color.Black;
-            raiz.Encender(lienzo);
+            raiz.Encender(lienzo);*/
 
 
             pictureBox2.Image = lienzo;

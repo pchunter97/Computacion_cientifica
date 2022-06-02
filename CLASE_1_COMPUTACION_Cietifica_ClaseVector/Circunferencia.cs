@@ -24,10 +24,22 @@ namespace CLASE_1_COMPUTACION_Cietifica_ClaseVector
             {
                 v.x0 = x0 + (Radio * (Math.Cos(t)));
                 v.y0 = y0 + (Radio * (Math.Sin(t)));
-                v.color0 = color0;
+                //v.color0 = Color.FromArgb(255,((37*(t-Math.PI))/-Math.PI)+((140*(t))/Math.PI),(93*(t-Math.PI)/-Math.PI)+(150*(t)/Math.PI),0);
+                v.color0 = Color.FromArgb(255,(int) (((37 * (t - Math.PI)) / -Math.PI) + ((140 * (t)) / Math.PI)), (int)((93 * (t - Math.PI) / -Math.PI) + (150 * (t) / Math.PI)),(int) ((140 * (t - Math.PI) / -Math.PI) + (30 * t / Math.PI)));
+                //((37*(t-Math.PI))/-Math.PI)+((140*(t))/Math.PI)(140 * (t - Math.PI) / -Math.PI) + (30 * t / Math.PI)
                 v.Encender(lienzo);
                 t = t + dt;
-            } while(t <= 2 * Math.PI);
+            } while(t <=  Math.PI);
+
+            t = Math.PI;
+            do
+            {
+                v.x0 = x0 + (Radio * (Math.Cos(t)));
+                v.y0 = y0 + (Radio * (Math.Sin(t)));
+                v.color0 = Color.FromArgb(255,(int)((140*(t-2*Math.PI)/-Math.PI)+(180*(t-Math.PI)/Math.PI)),(int)((150*(t-2*Math.PI)/-Math.PI)+(50*(t-Math.PI)/Math.PI)),(int)((30*(t-2*Math.PI)/-Math.PI)+(10*(t-Math.PI)/Math.PI)));
+                 v.Encender(lienzo);
+                t = t + dt;
+            } while (t <= 2*Math.PI);
         }
     }
 }
