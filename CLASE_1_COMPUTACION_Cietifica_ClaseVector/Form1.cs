@@ -510,6 +510,79 @@ namespace CLASE_1_COMPUTACION_Cietifica_ClaseVector
 
             } while (t2 <= 8);
         }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            Clasevector v = new Clasevector();
+            double t = -10;
+
+            do
+            {
+                v.x0 = t;
+                v.y0 = (-(t * t) - (14 * t) - 40)/3;
+                v.color0 = Color.Black;
+                v.Encender(lienzo);
+
+                t = t + 0.001;
+
+            } while (t <= -4);
+            pictureBox2.Image = lienzo;
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            //Circunferencia
+            Circunferencia circunferencia = new Circunferencia();
+            circunferencia.x0 = 0;
+            circunferencia.y0 =0;
+            circunferencia.Radio = 3;
+            circunferencia.color0 = Color.Blue;
+            circunferencia.Encender(lienzo);
+            pictureBox2.Image = lienzo;
+
+            //Animación
+            double t = 0;
+            double dt = 0.1;
+            Segmento segmento = new Segmento();
+            segmento.x0 = 0;
+            segmento.y0 = 0;
+            do
+            {
+                segmento.xf = segmento.x0 + (circunferencia.Radio * (Math.Cos(t))); ;
+                segmento.yf = segmento.y0 + (circunferencia.Radio * (Math.Sin(t))); ;
+                segmento.color0 = Color.Black;
+                segmento.Encender(lienzo);
+                pictureBox2.Image = lienzo;
+                pictureBox2.Refresh();
+                Thread.Sleep(40);
+                segmento.apagar(lienzo);
+                pictureBox2.Image = lienzo;
+                t = t + dt;
+            } while (t <= 2 * Math.PI);
+            
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            Clasevector v = new Clasevector();
+            double t = -2;
+            double dt =0.001;
+
+            do
+            {
+                v.x0 = t;
+                v.y0 = 1 / (t + 3);
+                v.color0 = Color.Black;
+                v.Encender(lienzo);
+                pictureBox2.Image = lienzo;
+                v.y0 = (0.33) - ((0.11) * t) + ((0.037) * t*t);
+                v.color0 = Color.Red;
+                v.Encender(lienzo);
+                pictureBox2.Image = lienzo;
+                t =t + dt;
+                  
+            } while (t <= 10);
+        }
     }
     
 }
